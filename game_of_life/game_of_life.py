@@ -6,7 +6,7 @@ import random
 
 x_size = 50
 y_size = 50
-init_ratio =0.5
+init_ratio =0.2
 
 data = np.zeros((x_size,y_size))
 new_data = np.zeros((x_size,y_size))
@@ -61,7 +61,7 @@ def update_frame(frame):
     ax.set_title("Frame:{0}".format(frame))
     return im
     
-animation = FuncAnimation(fig, update_frame, interval=100,frames=300,init_func=init_data )
+animation = FuncAnimation(fig, update_frame, interval=100,frames=30000,init_func=init_data )
 #animation.save("movie.avi")
 plt.show()
 exit()
