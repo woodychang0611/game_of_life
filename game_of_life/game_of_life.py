@@ -1,8 +1,11 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
+import matplotlib.animation as animation
 import random
 
+# ImageMagick is needed for gif 
+# ffmpeg is needed for avi
 
 x_size = 50
 y_size = 50
@@ -61,7 +64,8 @@ def update_frame(frame):
     ax.set_title("Frame:{0}".format(frame))
     return im
     
-animation = FuncAnimation(fig, update_frame, interval=100,frames=30000,init_func=init_data )
-#animation.save("movie.avi")
+animation = FuncAnimation(fig, update_frame, interval=100,frames=500,init_func=init_data )
+animation.save("game_of_life.avi")
+animation.save("game_of_life.gif",writer='imagemagick',fps=15)
 plt.show()
 exit()
